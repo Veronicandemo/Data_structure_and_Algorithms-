@@ -32,6 +32,16 @@ update()
 console.log([...itemList])
 console.log(...itemAndQuantity)
 // Write a function to update the stock quantity of an existing item
+const updateItem = (inventory) => {
+    inventory.forEach( item => {
+        if(item.quantity === 10){
+           return console.log(item.quantity = 3)
+        }
+    })
+}
+updateItem(itemAndQuantity)
+console.log(itemAndQuantity)
+
 
 // Write a function to calculate the total number of items in the inventory.
 let sum = 0
