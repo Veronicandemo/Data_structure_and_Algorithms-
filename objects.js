@@ -9,13 +9,16 @@ const people = [
   { name: 'Charlie', age: 14 },
   { name: 'Max', age: 19 },
 ];
+
 const above18 = array => {
+    const olderArr = []
     array.forEach(element => {
         if(element.age >= 18)
-         return console.log(element.name)
+         olderArr.push(element.name)
     });
+    return olderArr
 }
-above18(people)
+console.log(above18(people))
 // Write a function that takes an array of objects, where each object represents a product
 //  with a name, price, and category property. 
 // The function should return an object that groups the products by their categories, 
