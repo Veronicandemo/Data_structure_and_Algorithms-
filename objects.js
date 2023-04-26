@@ -43,20 +43,34 @@ const students = [
     { name: 'Jane', scores: [95, 92, 88] },
     { name: 'Jim', scores: [70, 80, 75] },
     { name: 'Jill', scores: [85, 90, 84] },
-];
-// let average = 0
-// const getAverage = (students) => {
-//         students.map(element => {
-    //         let eachScore = element.scores
-    //         eachScore.forEach( element =>{
-        //             console.log(eachScore[element])
-        //         })
-        //         // console.log(average)
-        
-        // }) 
-// }
-// getAverage(students)
-
+];  
+//   const highestscores = students
+//     .filter(student => {
+//      const averageScore = student.scores.reduce((acc, cur) => acc + cur, 0) / student.scores.length;
+//       return averageScore >= 85;
+//     }).map(student => student.name);
+  
+//   console.log(highestscores);
+// const highestscores = ( students => {
+//     students.scores.reduce((acc, cur) => {
+//         acc + cur / students.scores.length
+//     }).reduce( )
+//     })
+const findingAv = (students) => {// this is arrow function 
+    const studentsMore85 = [];     // empty array which will hold the names of syudent with grades>=85
+    students.forEach((student)  => {
+      const { name, scores } = student;    // here we are looping through thr array of objects and this 
+ 
+      const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+      if (averageScore >= 85) {
+        studentsMore85.push(name);
+      }
+    });
+  
+    return studentsMore85;
+  };
+  const studentsHigh = findingAv(students);
+  console.log(studentsHigh);
 // Given an object representing a car, with properties for the make, model, year, and a method to 
 // display the car's information, 
 // write a function that takes the car object and adds a new method to the object called age. 
